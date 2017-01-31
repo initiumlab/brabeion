@@ -3,7 +3,7 @@ from django.apps import AppConfig
 from django.utils.translation import ugettext_lazy as _
 
 
-class BrabeionConfig(AppConfig):
+class BrabeionAppConfig(AppConfig):
 
     name = 'brabeion'
     verbose_name = _(u'Brabeion')
