@@ -15,7 +15,7 @@ class BadgeDetail(object):
 
 
 class Badge(object):
-    async = False
+    asynchronous = False
 
     def __init__(self):
         assert not (self.multiple and len(self.levels) > 1)
@@ -29,7 +29,7 @@ class Badge(object):
         asynchronous it just queues up the badge awarding.
         """
         assert "user" in state
-        if self.async:
+        if self.asynchronous:
             from brabeion.tasks import AsyncBadgeAward
             state = self.freeze(**state)
             AsyncBadgeAward.delay(self, state)
